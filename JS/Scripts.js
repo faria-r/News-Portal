@@ -13,22 +13,29 @@ const loadCategories = ()=>{
     categoryDiv.classList.add('px-4')
     categoryDiv.innerHTML= 
     `
-    <button onclick="loadNews('')">${category.category_name}</button>
-    `; //${.category_id}
+    <button onclick="loadNews('${category.category_id}')">${category.category_name}</button>
+    `; 
     categoryContainer.appendChild(categoryDiv);
     })
     }
+
+
+
+
+
+
+
 //load News accroding to category
-const loadNews = () => {
-    const url = `https://openapi.programming-hero.com/api/news/category/01`
+const loadNews = (id) => {
+    const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
     fetch(url)
     .then(res => res.json())
-    // .then(data => showNews(data.data.news_category))
-    .then(data => showNews(data.data))
+    .then(data => showNews(data.data[0]))
 }
 
 //Show news in UI
-const showNews = news =>{
+const showNews = news => {
+    console.log(news);
     const newsContainer = document.getElementById('news-container');
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('card');
@@ -56,7 +63,7 @@ const showNews = news =>{
         newsContainer.appendChild(newsDiv);
 
 }
-// loadNews();
+loadNews();
 
 //calling categories Loader Function
 loadCategories();
