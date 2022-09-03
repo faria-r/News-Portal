@@ -29,47 +29,67 @@
     </header>
     <main>
         <h2 class="text-center bg-secondary text-warning p-4">Important Javascript Questions & Answers</h2>
-        <section>
-            <div class="d-flex justify-content-around flex-wrap ">
-                <div class="bg-dark text-center w-50 m-5">
-                    <h3 class="bg-light text-primary p-2 fs-4">Whats The Different Between var, let and const?</h3>
-                    <p class=" bg-light p-2 fs-5">
-                        var declarations are globally scoped or function scoped while let and const are block scoped.
-                    </p>
-                    <p class=" bg-light p-2 fs-5">
+        <section class="container">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        Whats The Different Between var, let and const?
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                      <p>
+                        var declarations are globally scoped or function scoped while let and const are block scoped. <br>
                         var variables can be updated and re-declared within its scope; let variables can be updated but
-                        not re-declared; const variables can neither be updated nor re-declared.
-                    </p>
-                    <p class=" bg-light p-2 fs-5">
+                        not re-declared; const variables can neither be updated nor re-declared. <br>
                         They are all hoisted to the top of their scope. But while var variables are initialized with
                         undefined, let and const variables are not initialized.
-                    </p>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="bg-dark text-center w-50 m-5">
-                    <h3 class="bg-light text-primary p-2 fs-4">Whats The Different Between Regular Function & Arrow
-                        Function?</h3>
-                    <p class=" bg-light p-2 fs-5">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Whats The Different Between Regular Function & Arrow
+                        Function?
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                      <p>
                         It is unable to use "this" keyword in arrow functions whereas in regular functions it can be
                         used without any disturbance.
-                    </p>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="bg-dark text-center w-50 m-5">
-                    <h3 class="bg-light text-primary p-2 fs-4">Whats The Different Between Regular Function & Arrow
-                        Function?</h3>
-                    <p class=" bg-light p-2 fs-5">
-                        It is unable to use "this" keyword in arrow functions whereas in regular functions it can be
-                        used without any disturbance.
-                    </p>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                      whats the  difference between map,for each,filter,find ?
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                  </div>
                 </div>
-                <div class="bg-dark text-center w-50 m-5">
-                    <h3 class="bg-light text-primary p-2 fs-4">Whats The Different Between Regular Function & Arrow
-                        Function?</h3>
-                    <p class=" bg-light p-2 fs-5">
-                        It is unable to use "this" keyword in arrow functions whereas in regular functions it can be
-                        used without any disturbance.
-                    </p>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                      Why We use Template String?
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                    <div class="accordion-body">
+                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </div>
         </section>
     </main>
     <!-- bootstrap Scripts link  -->
