@@ -40,11 +40,12 @@ const showNews = allnews => {
         <div class="col-md-8">
         <div class="card-body">
         <h5 class="card-title">${news.title}</h5>
-        <p style="width:100%;
-        height: 70px;text-overflow: ellipsis; display: -webkit-box;
-        -webkit-line-clamp: 3;
+        <div style=" display: -webkit-box;
         -webkit-box-orient: vertical;
-        overflow: hidden;" class="card-text d-block">${news.details}</p>
+        -webkit-line-clamp: 4;
+        overflow: hidden;text-overflow: ellipsis;">
+        <p class="card-text d-block">${news.details}</p>
+        </div>
         </div>
           <div class = "d-flex justify-content-evenly mt-5">
                     <div class="d-flex">
