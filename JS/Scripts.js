@@ -42,10 +42,7 @@ const showNews = allnews => {
         <div class="col-md-8">
         <div class="card-body">
         <h5 class="card-title">${news.title}</h5>
-        <div style=" display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 4;
-        overflow: hidden;text-overflow: ellipsis;">
+        <div style=" display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp:4;overflow: hidden;text-overflow: ellipsis;">
         <p class="card-text d-block">${news.details}</p>
         </div>
         </div>
@@ -54,9 +51,9 @@ const showNews = allnews => {
                     <img src="${news.author.img}" class="img-fluid rounded" style="height:50px;width:50px;">
                     <p class="ps-4">${news.author.name ? news.author.name : 'Name Not Found'}</p>
                     </div>
-                    <div class="d-flex">
-                    <i class="fa-thin fa-eye"></i>
-                    <p class="ps-4">${news.total_view}</p>
+                    <div class=" d-flex justify-content-center align-items-center">
+                    <img src="images/visibility.svg" class="img-fluid rounded-start"style="height:20px;width:20px; alt="...">
+                    <p class="ps-4 pt-3">${news.total_view}</p>
                     </div>
                     </div>
                     <div class="text-center mt-3">
@@ -68,7 +65,7 @@ const showNews = allnews => {
 
 }
 
-loadNews();
+loadNews('05');
 
 
 //spinnner function 
@@ -98,6 +95,7 @@ const displaynewsDetailes = news => {
         const modalDiv = document.createElement('div');
         modalDiv.classList.add('modal-body');
         modalDiv.innerHTML= `
+        <h5 class="text-center">${allnews.title}</h5>
         <img src="${allnews.author.img ? allnews.author.img : 'image Not Available'}" class="img-fluid rounded" style="height:50px;width:50px;">
         <p>Author Name:${allnews.author.name ? allnews.author.name: 'Name Not Available'} </p>
         <p>Total Veiw: ${allnews.total_view ? allnews.total_view : 'No Veiw'}</p>
