@@ -1,9 +1,15 @@
 //load categories Api
 const loadCategories = async () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`
-    const res = await fetch(url);
-    const data = await res.json();
-    displayCategories(data.data.news_category);
+    try{
+        const res = await fetch(url);
+        const data = await res.json();
+        displayCategories(data.data.news_category);
+    }
+    catch(error){
+        console.log(error);
+    }
+    
 }
 //Display categories in UI
 const displayCategories = categories => {
@@ -12,7 +18,7 @@ const displayCategories = categories => {
         const categoryDiv = document.createElement('div');
         categoryDiv.classList.add('px-4')
         categoryDiv.innerHTML =
-            `<button onclick="loadNews('${category.category_id}')">${category.category_name}
+            `<button class="mb-3 rounded shadow border-0 py-2 px-1 fs-6" onclick="loadNews('${category.category_id}')">${category.category_name}
         </button>`;
         categoryContainer.appendChild(categoryDiv);
     })
@@ -21,17 +27,25 @@ const displayCategories = categories => {
 loadCategories();
 
 //load News accroding to category
-const loadNews = (id) => {
+const loadNews = async (id) => {
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
-    fetch(url)
-        .then(res => res.json())
-        .then(data => showNews(data.data));
+    
+    try{
+       
+        const res = await fetch(url);
+        const data = await res.json();
+         showNews(data.data);
+    }
+    catch(error){
+        console.log(error);
+    }
 }
 //Show news in UI
 const showNews = allnews => {
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = '';
     allnews.forEach(news => {
+        
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('card', 'mb-5', 'p-4', 'bg-secondary');
         newsDiv.innerHTML =
@@ -62,7 +76,6 @@ const showNews = allnews => {
         `;
         newsContainer.appendChild(newsDiv);
     })
-
 }
 
 loadNews('05');
@@ -82,10 +95,15 @@ const toggleSpinner = isLoading => {
 //modal for details news
 const loadNewsDetailes = async id => {
     const url = `https://openapi.programming-hero.com/api/news/${id}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displaynewsDetailes (data.data);
-    ;
+    try{
+        const res = await fetch(url);
+        const data = await res.json();
+        displaynewsDetailes (data.data);
+    }
+    catch(error){
+        console.log(error);
+    }
+    
 }
 //function to display Modal
 const displaynewsDetailes = news => {
