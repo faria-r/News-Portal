@@ -28,6 +28,7 @@ loadCategories();
 
 //load News accroding to category
 const loadNews = async (id) => {
+    toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
     
     try{
@@ -89,6 +90,7 @@ const showNews = allnews => {
         else{
             newsContainer.classList.add('d-none')
         }
+        toggleSpinner(false);
 }
 
 loadNews('05');
